@@ -12,6 +12,16 @@ class Ride(object):
         self.waiting = waiting
 
 
+class Vehicle(object):
+    def __init__(self, pos, rides=None):
+        """
+        :param pos = tuple of (x, y)
+        """
+        self.rides = rides or []
+        self.pos = pos
+        self.occupied = False
+
+
 def get_rides(fname):
     inp = open(fname, 'r')
     R, C, F, N, B, T = map(int, next(inp).split(' '))
